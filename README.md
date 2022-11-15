@@ -8,6 +8,8 @@ Basically it has some essential plugins and components already set up:
 - Auto Routes
 - Auto Plugins
 - CORS and Helmet (to protect headers)
+- JWT
+- Parameter validation
 
 ## Prisma
 To use Prisma, don't forget to create a `.env` file in your project root, and add the following line:

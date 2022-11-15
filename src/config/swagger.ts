@@ -3,8 +3,8 @@ export const swaggerOptions = {
   exposeRoute: true,
   swagger: {
     info: {
-      title: 'Boilerplate API',
-      description: 'API to boilerplate app',
+      title: 'Pricey API',
+      description: 'API to Pricey app',
       version: '1.0.0'
     },
     // externalDocs: {

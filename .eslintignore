@@ -1,0 +1,8 @@
+/node_modules
+android/*
+ios/*
+babel.config.js
+metro.config.js
+react-native.config.js
+commitlint.config.js
+index.js

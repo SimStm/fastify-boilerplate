@@ -2,23 +2,23 @@ import fp from 'fastify-plugin'
 import { FastifyPluginAsync } from 'fastify'
 import { PrismaClient } from '@prisma/client'
 
-interface PrettifierResponse {
+interface IPrettifierResponse {
   statusCode: number
   data: any
   message?: string
 }
 
-interface Prettifier {
+interface IPrettifier {
   response: (
     statusCode: number,
     data: any,
     message?: string
-  ) => PrettifierResponse
+  ) => IPrettifierResponse
 }
 
 declare module 'fastify' {
   interface FastifyInstance {
-    pretty: Prettifier
+    pretty: IPrettifier
   }
 }
 
@@ -28,7 +28,7 @@ const friendlyResponsePlugin: FastifyPluginAsync = fp(
       statusCode: number,
       data: any,
       message: string | undefined = undefined
-    ): PrettifierResponse => ({ statusCode, message, data })
+    ): IPrettifierResponse => ({ statusCode, message, data })
 
     server.decorate('pretty', {
       response: responseMethod

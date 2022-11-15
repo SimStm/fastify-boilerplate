@@ -33,7 +33,11 @@ export async function startServer() {
   // This loads all plugins defined in services
   // define your routes in one of these
   app.log.info(`--- Loading Routes...`)
-  app.register(autoLoad, { dir: join(__dirname, 'routes'), routeParams: true })
+  app.register(autoLoad, {
+    dir: join(__dirname, 'routes'),
+    routeParams: true,
+    indexPattern: /.*routes(\.ts|\.js)$/
+  })
   app.log.info(`--- Routes loaded!`)
 
   try {
